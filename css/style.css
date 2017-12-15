@@ -73,6 +73,10 @@ a {
   text-decoration: none;
 }
 
+.hide-outline button:focus {
+  outline: none;
+}
+
 .btn {
   display: inline-block;
   padding: 16px 0;
@@ -87,10 +91,14 @@ a {
   vertical-align: top;
 
   border-radius: 3px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:active {
   color: rgba(255, 255, 255, 0.3);
+
+  box-shadow: inset 0 3px 0 0 rgba(0, 1, 1, 0.1);
 }
 
 .container {
@@ -101,6 +109,7 @@ a {
 
 .main-header {
   min-height: 545px;
+  margin-bottom: 80px;
   padding-top: 49px;
 
   background-color: #eeeeee;
@@ -188,30 +197,6 @@ a {
   position: relative;
 }
 
-.slider input {
-  display: none;
-}
-
-.slider:focus-within input {
-  display: block;
-}
-
-.slider.focus-within input {
-  display: block;
-}
-
-.slider-trigger:focus ~ .slider-controls {
-  box-shadow: 0 0 0 3px #2f7cc0;
-}
-
-.slider:focus-within .slider-trigger:not(:focus) {
-  display: none;
-}
-
-.slider.focus-within .slider-trigger:not(:focus) {
-  display: none;
-}
-
 .slider-controls {
   position: absolute;
   bottom: 96px;
@@ -233,18 +218,24 @@ a {
   left: 0;
 
   display: block;
-
   width: 18px;
   height: 18px;
 
   background-color: #ffffff;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .slider-1:focus ~ .slider-controls label[for="slider-btn-1"],
 .slider-2:focus ~ .slider-controls label[for="slider-btn-2"],
 .slider-3:focus ~ .slider-controls label[for="slider-btn-3"] {
   box-shadow: 0 0 0 3px #2f7cc0;
+}
+
+.hide-outline .slider-1:focus ~ .slider-controls label[for="slider-btn-1"],
+.hide-outline .slider-2:focus ~ .slider-controls label[for="slider-btn-2"],
+.hide-outline .slider-3:focus ~ .slider-controls label[for="slider-btn-3"] {
+  box-shadow: none;
 }
 
 .slider-1:checked ~ .slider-controls label[for="slider-btn-1"]::after,
@@ -268,12 +259,6 @@ a {
   padding: 0;
 }
 
-.slider-1:checked ~ .slider-list .slider-item:first-child,
-.slider-2:checked ~ .slider-list .slider-item:nth-child(2),
-.slider-3:checked ~ .slider-list .slider-item:last-child {
-  display: block;
-}
-
 .slider-item {
   position: relative;
 
@@ -281,6 +266,12 @@ a {
   width: 515px;
   min-height: 421px;
   padding-top: 69px;
+}
+
+.slider-1:checked ~ .slider-list .slider-item:first-child,
+.slider-2:checked ~ .slider-list .slider-item:nth-child(2),
+.slider-3:checked ~ .slider-list .slider-item:last-child {
+  display: block;
 }
 
 .slider-item h3 {
@@ -317,7 +308,6 @@ a {
 
 .slider-item .btn:active {
   background-color: #d7373b;
-  box-shadow: inset 0 3px 0 0 rgba(0, 1, 1, 0.1);
 }
 
 .slider-item:first-child::after {
@@ -328,7 +318,7 @@ a {
   width: 698px;
   height: 413px;
 
-  background: url("../img/slide1.png") 0 0 no-repeat;
+  background: url("../img/slide-1.png") 0 0 no-repeat;
 
   content: "";
 }
@@ -341,7 +331,7 @@ a {
   width: 663px;
   height: 430px;
 
-  background: url("../img/slide2.png") 0 0 no-repeat;
+  background: url("../img/slide-2.png") 0 0 no-repeat;
 
   content: "";
 }
@@ -354,7 +344,336 @@ a {
   width: 759px;
   height: 411px;
 
-  background: url("../img/slide3.png") 0 0 no-repeat;
+  background: url("../img/slide-3.png") 0 0 no-repeat;
 
   content: "";
+}
+
+.offer-list {
+  display: flex;
+  justify-content: space-between;
+  width: 1100px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.offer {
+  margin-bottom: 156px;
+}
+
+.offer-item figure {
+  margin: 0;
+}
+
+.offer-item img {
+  margin-bottom: 23px;
+}
+
+.offer-item figcaption {
+  width: 240px;
+}
+
+.offer-item h3 {
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.offer-item p {
+  margin: 0;
+  margin-bottom: 32px;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.offer-item .btn {
+  width: 160px;
+}
+
+.offer-item:first-child .btn {
+  background-color: #fb565a;
+}
+
+.offer-item:first-child .btn:hover,
+.offer-item:first-child .btn:focus {
+  background-color: #e74246;
+}
+
+.offer-item:first-child .btn:active {
+  background-color: #d7373b;
+}
+
+.offer-item:nth-child(2) .btn {
+  background-color: #00ca74;
+}
+
+.offer-item:nth-child(2) .btn:hover,
+.offer-item:nth-child(2) .btn:focus {
+  background-color: #00bc6c;
+}
+
+.offer-item:nth-child(2) .btn:active {
+  background-color: #00aa62;
+}
+
+.offer-item:last-child .btn {
+  background-color: #efc84a;
+}
+
+.offer-item:last-child .btn:hover,
+.offer-item:last-child .btn:focus {
+  background-color: #eab534;
+}
+
+.offer-item:last-child .btn:active {
+  background-color: #e5a722;
+}
+
+.about-us {
+  margin-bottom: 109px;
+}
+
+.about-us header {
+  width: 660px;
+  margin-bottom: 40px;
+}
+
+.about-us h2 {
+  margin: 0;
+  margin-bottom: 33px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.about-us p {
+  margin: 0;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #283136;
+}
+
+.about-us .inner {
+  display: flex;
+  justify-content:space-between;
+}
+
+.opportunities {
+  width: 460px;
+}
+
+.opportunities h3 {
+  margin: 0;
+  margin-bottom: 23px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.opportunities ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #284136;
+  list-style: none;
+}
+
+.opportunities-list li {
+  position: relative;
+  padding-left: 36px;
+}
+
+.opportunities-list li:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.opportunities-list li::before {
+  position: absolute;
+  left: 1px;
+
+  width: 25px;
+  height: 2px;
+  margin: 11px 0;
+
+  background-color: #fb565a;
+  content: "";
+}
+
+.advantages {
+  position: relative;
+
+  width: 360px;
+}
+
+.advantages::before {
+  position: absolute;
+  top: -245px;
+
+  width: 360px;
+  height: 208px;
+
+  background: url("../img/nerds-illustration.png") 0 0 no-repeat;
+  content: "";
+}
+
+.advantages h3 {
+  margin: 0;
+  margin-bottom: 59px;
+  margin-left: 17px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.advantages td {
+  padding-bottom: 29px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 10.06px;
+}
+
+.advantages td:not(:last-child) {
+  padding-right: 11px;
+}
+
+.advantages th {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.partners {
+  margin-bottom: 104px;
+}
+
+.partners-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.partners-list li:not(:last-child) {
+  position: relative;
+}
+
+.partners-list li:not(:last-child)::after {
+  position: absolute;
+  top: 30px;
+  right: -21px;
+  width: 2px;
+  height: 52px;
+  background-color: #eeeeee;
+  content: "";
+}
+
+.partners-list a {
+  position: relative;
+
+  opacity: 0.2;
+}
+
+.partners-list a:hover,
+.partners-list a:focus {
+  opacity: 1;
+}
+
+.partners-list a:active {
+  opacity: 0.1;
+}
+
+.partners a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 260px;
+  height: 120px;
+
+  content: "";
+}
+
+.contacts .inner {
+  position: relative;
+}
+
+.contacts .contacts-card {
+  position: absolute;
+  top: 54px;
+  left: 20px;
+
+  width: 319px;
+  min-height: 308px;
+  padding: 51px 55px 48px 50px;
+
+  background-color: #ffffff;
+}
+
+.contacts-card h3 {
+  margin: 0;
+  margin-bottom: 22px;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.contacts-card address,
+.phone-number {
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #666666;
+}
+
+.contacts-card address:first-of-type {
+  margin-bottom: 17px;
+}
+
+.contacts-card address:last-of-type {
+  margin-bottom: 37px;
+}
+
+.contacts-card .btn {
+  width: 219px;
+  background-color: #fb565a;
+}
+
+.contacts-card .btn:hover,
+.contacts-card .btn:focus {
+  background-color: #e74246;
+}
+
+.contacts-card .btn:active {
+  background-color: #d7373b;
+}
+
+.contacts img {
+  display: block;
+  margin: 0 auto;
 }
