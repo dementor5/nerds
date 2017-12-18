@@ -151,15 +151,72 @@
           <h3>NЁRDS DESIGN STUDIO</h3>
           <address>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
           <address><a class="phone-number" href="tel:+78122757575">тел. +7 (812) 275-75-75</a></address>
-          <a class="btn" href="write_us.html">Напишите нам</a>
+          <a class="btn contacts-write-us" href="write_us.html">Напишите нам</a>
         </section>
       </div>
-      <a href="img/map-big.jpg"><img src="img/map.jpg" width="1440" height="416" alt="Карта офиса по адресу г. Санкт-Петербург, ул. Б. Конюшеннаяб д. 19/8"></a>
+      <div id="map"></div>
+      <img src="img/map.jpg" width="1440" height="416" alt="Карта офиса по адресу г. Санкт-Петербург, ул. Б. Конюшенная д. 19/8">
     </section>
 
   </main>
-  <footer>
+  <footer class="main-footer container">
+    <ul class="social-list">
+      <li>
+        <a class="social-link" href="https://vk.com">
+          <img src="img/vk-icon.svg" width="26" height="15" alt="Наш контакт">
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://facebook.com">
+          <img src="img/fb-icon.svg" width="12" height="22" alt="Наш фейсбук">
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://instagram.com">
+          <img src="img/insta-icon.svg" width="21" height="21" alt="Наш инстаграмм">
+        </a>
+      </li>
+    </ul>
+    <section class="discount-offer">
+      <h2>Давайте дружить, это выгодно!</h2>
+      <p>Скидка 10% для друзей из социальных сетей.</p>
+    </section>
   </footer>
+
+  <section class="modal-feedback">
+    <h2>Напишите нам</h2>
+    <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+
+      <div class="inner inner-feedback">
+        <p>
+          <label>
+            Ваше имя:
+            <input type="text" name="feedback-name" placeholder="Представьтесь, пожалуйста">
+          </label>
+        </p>
+        <p>
+          <label>
+            Ваш e-mail:
+            <input type="email" name="feedback-email" placeholder="Для отправки ответа">
+          </label>
+        </p>
+      </div>
+
+      <p>
+        <label>
+          Текст письма:
+          <textarea name="feedback-message" placeholder="В свободной форме"></textarea>
+        </label>
+      </p>
+      <button class="btn" type="submit">Отправить</button>
+    </form>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+  </section>
+
   <script src="js/hide-outline.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+  <script src="js/map_conf.js"></script>
+  <script src="js/modal.js"></script>
+
 </body>
 </html>
